@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>CompassJs test</title>
+    <meta name = "author" content = "Javier Reyes Ribes">
+
+    <script type = "text/javascript" src = "./bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script type = "text/javascript" src = "./js/compass.js"></script>
+
+    <script>
+      $(function() {
+        myCompass = new CompassJs('#example');
+        myCompass.setSize(500, 500);
+
+        myCompass.rotate(-82);
+
+        $('#changeSize').click(function() {
+          myCompass.setSize(300, 300)
+        });
+
+        $('#n, #ne, #nw, #s, #se, #sw, #e, #w, #pepe').click(function() {
+          myCompass.pointTo(this.id);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id = "example"></div>
+    <button id = "changeSize">Change Size </button>
+
+    <button id = "n">Point North </button>
+    <button id = "ne">Point NorthEast </button>
+    <button id = "nw">Point NorthWest </button>
+
+    <button id = "s">Point South</button>
+    <button id = "se">Point SouthEast </button>
+    <button id = "sw">Point SouthWest </button>
+
+    <button id = "e">Point East </button>
+    <button id = "w">Point West </button>
+    <button id = "pepe">Point pepe(invalid)</button>
+  </body>
+</html>
