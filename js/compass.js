@@ -8,44 +8,21 @@
 var CompassJs = function(selector) {
   var jQCompass = $(selector);
 
-  jQCompass.css({
-    "width": '300px',
-    "height": '300px',
-
-    "background-image": 'url("./img/compass.png")',
-    "background-size": '100% 100%',
-    "background-repeat": 'no-repeat',
-
-    "overflow": 'hidden'
-  });
+  jQCompass.addClass('compassjs-container');
 
   var jQHand = $('<div>');
 
-  jQHand.css({
-    "width": '200px',
-    "height": '200px',
-
-    "position": 'relative',
-    "top": '50%',
-    "left": '50%',
-    "margin-top": '-100px',
-    "margin-left": '-100px',
-
-    "background-image": 'url("./img/hand.png")',
-    "background-size": '100% 100%',
-    "background-repeat": 'no-repeat',
-
-    "-webkit-transition": '-webkit-transform 1s',
-    "-moz-transition": '-moz-transform 1s',
-    "-ms-transition": '-ms-transition 1s',
-    "-o-transition": '-o-transition 1s',
-    "transition": 'transform 1s'
-  });
+  jQHand.addClass('compassjs-hand');
 
   jQCompass.append(jQHand);
 
 
   // Instance methods
+
+  this.delete = function() {
+      jQCompass.remove();
+  };
+
   this.setSize = function(width, height) {
     jQCompass.css({
       "width": width + 'px',
@@ -59,7 +36,7 @@ var CompassJs = function(selector) {
       "margin-top": (height * (-1/3)) + 'px',
       "margin-left": (width * (-1/3)) + 'px'
     });
-  }
+  };
 
   this.rotate = function (degrees) {
     jQHand.css({
@@ -67,7 +44,7 @@ var CompassJs = function(selector) {
       "-webkit-transform": 'rotate(' + degrees + 'deg)',
       "transform": 'rotate(' + degrees + 'deg)'
     });
-  }
+  };
 
   this.pointTo = function(direction) {
     direction = direction.toLowerCase();
@@ -105,8 +82,8 @@ var CompassJs = function(selector) {
       this.rotate(directionDeg);
     } else {
       try {
-        console.error('Invalid direction "' + direction + '", directions supported: n/north, nw/northwest, ne/northeast, s/south, sw/southwest, se/southeast, w/west, e/east.')
+        console.error('Invalid direction "' + direction + '", directions supported: n/north, nw/northwest, ne/northeast, s/south, sw/southwest, se/southeast, w/west, e/east.');
       } catch(e) {}
     }
-  }
-}
+  };
+};
