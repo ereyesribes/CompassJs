@@ -1,0 +1,26 @@
+{
+  "name": "CompassJs",
+  "authors": [
+    "Javier Reyes Ribes <cobretti124@gmail.com>"
+  ],
+  "description": "Simple Compass Interface Element for Websites and the like.",
+  "main": "index.html",
+  "keywords": [
+    "compass",
+    "javascript",
+    "js",
+    "jquery"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
